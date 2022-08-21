@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: tt commons, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 
 a {
@@ -13,6 +12,166 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.m-0{
+  margin: 0!important;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+.mt-30{
+  margin-top: 30px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.gray-color{
+  color: #555555;
+}
+
+h2{
+  font-size: 20px;
+}
+
+.inline{
+  display: flex;
+  display: -webkit-flex;
+  gap: 5px;
+}
+
+.main-body{
+  max-width:850px;
+  margin: 0 auto;
+  padding: 1.5em 0 1em 0;
+}
+
+.intro h1{
+  font-size: 32px;
+}
+
+.frame-res {
+  position: relative;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 1.5em;
+  max-width: 100%;
+}
+
+.f-des {
+  background: #fff;
+  color: #292929;
+  border: 1px solid #191919;
+  border-radius: 0.4em;
+  box-shadow: -1px 1px 15px 0px rgba(41, 41, 41, 0.67);
+  -webkit-box-shadow: -1px 1px 15px 0px rgba(41, 41, 41, 0.67);
+  -moz-box-shadow: -1px 1px 15px 0px rgba(41, 41, 41, 0.67);
+}
+
+.sec-wrapper{
+  display: flex;
+  display: -webkit-flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.j-start{
+  justify-content: start!important;
+}
+
+.sec{
+  border: 0.2px solid #e2e2e2;
+  flex: 1;
+  padding: 1em;
+}
+
+footer{
+  margin-top: 80px;
+  position: relative;
+  bottom: 0;
+}
+
+.f-hero{
+  display: flex;
+  justify-content: center;
+  margin: 1em 0 1em 0;
+  color: #fff;
+  background: none;
+}
+
+.n-flex{
+  display: block!important;
+}
+
+.blue {
+  background: linear-gradient(to bottom right, #4FC3F7 0%, #2196F3 100%);
+  color: #fff;
+}
+
+.badge-wrapper{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge-wrapper .badge{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.badge .close{
+  display: none;
+}
+
+.badge:hover .close {
+  transition: ease-in-out 0.6s;
+  display: block;
+}
+
+.badge .close:hover{
+  cursor: pointer;
+}
+
+.badge-wrapper .badge ._i5--j{
+  color: #fff!important;
+}
+
+._i5--j{
+  margin: 0!important;
+  padding: 0!important;
+  background: none!important;
+  border: none!important;
+  color: #292929!important;
+}
+
+._4GdcU{
+  white-space: unset!important;
+}
+
+._G0k44{
+  height: auto!important;
+}
+
+._4GdcU:hover{
+  background:none!important;
 }
 
 @media (prefers-color-scheme: dark) {
