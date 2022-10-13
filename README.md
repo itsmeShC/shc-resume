@@ -1,5 +1,5 @@
 # Introduction 👋
-A resume is a formal document that gives a summary of your professional experience, accomplishments, and education. It also includes information about any relevant work experience, abilities, or education you may have. 
+A resume is a formal document that gives a summary of your professional experience, accomplishments, and education. It also includes information about any relevant work experience, abilities, or education you may have. A resume helps you highlight your skills and persuade companies that you are competent and employable. It is typically combined with a cover letter.
 
 # SHC-Resume
 This resume is editable. By just clicking on any word within the resume, you may edit it and make your own version.
