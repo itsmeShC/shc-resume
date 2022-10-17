@@ -11,10 +11,15 @@ import Nav  from "./components/nav";
 import StandardResume from "./components/standardResume";
 import Info from "./components/info";
 import Faqs from "./components/faqs";
+import ProfessionalResume from "./components/professionalResume";
+
+
 
 export const Home= (close)=> {
   let [tempClassic, settempClassic] = useState(true);
   let [tempStandard, settempStandard] = useState(false);
+  let [tempProfessional, setTempProfessional] = useState(false);
+
   let [showTemp, setshowTemplates] = useState(false);
   let [hideBadge, sethideBadge] = useState(true);
 
@@ -26,19 +31,31 @@ export const Home= (close)=> {
 
   const componentRef = useRef();
   const standardRef = useRef();
+  const professionalRef = useRef();
   const hideRef = React.useRef(null);
 
   const showClassic = () => {
     settempClassic(true);
     settempStandard(false);
+    setTempProfessional(false);
     setshowTemplates(false);
   };
 
   const showStandard = () => {
     settempClassic(false);
     settempStandard(true);
+    setTempProfessional(false);
+
     setshowTemplates(false);
   };
+
+  const showProfessional = () => {
+    settempClassic(false);
+    settempStandard(false);
+    setTempProfessional(true);
+    setshowTemplates(false);
+  };
+
   return (
     <div>
       <main>
@@ -108,7 +125,7 @@ export const Home= (close)=> {
                         <div className="temp" onClick={showStandard}>
                           <h4 className="m-0">Standard</h4>
                         </div>
-                        <div className="temp">
+                        <div className="temp" onClick={showProfessional}>
                           <h4 className="m-0">Professional</h4>
                         </div>
                       </div>
@@ -168,7 +185,112 @@ export const Home= (close)=> {
                         <div className="temp" onClick={showStandard}>
                           <h4 className="m-0">Standard</h4>
                         </div>
-                        <div className="temp">
+                        <div className="temp" onClick={showProfessional}>
+                          <h4 className="m-0">Professional</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mBtn-grp">
+            <div className="mBtn">
+              {tempClassic ? (
+                <ReactToPrint
+                  bodyClass="pdf-viewer"
+                  content={() => {
+                    console.log(componentRef.current);
+                    return componentRef.current;
+                  }}
+                  trigger={() => (
+                    <button className="btn blue w-100">
+                      <IoCloudDownloadSharp />
+                      <span className="ml-10">Download</span>
+                    </button>
+                  )}
+                />
+              ) : (
+                <ReactToPrint
+                  bodyClass="pdf-viewer"
+                  content={() => {
+                    return standardRef.current;
+                  }}
+                  trigger={() => (
+                    <button className="btn blue w-100">
+                      <IoCloudDownloadSharp />
+                      <span className="ml-10">Download</span>
+                    </button>
+                  )}
+                />
+              )}
+            </div>
+
+            <div className="mBtn mbtn-temp">
+              <button
+                className="btn blue w-100"
+                onClick={() => setshowTemplates(true)}
+              >
+                <IoDocuments />
+                <span className="ml-10">Templates</span>
+              </button>
+            </div>
+          </div>
+
+{/* Professional template */}
+          {tempProfessional ? (
+            <div className="mt-20">
+              <h2 className="white">Professional Resume</h2>
+              <ProfessionalResume ref={professionalRef} />
+              <div className="btn-grp">
+                <ReactToPrint
+                  bodyClass="pdf-viewer"
+                  content={() => {
+                    return standardRef.current;
+                  }}
+                  trigger={() => (
+                    <div className="down-btn blue mb-20">
+                      <div className="down-btn-color">
+                        <h1 className="m-0">
+                          <IoCloudDownloadSharp />
+                        </h1>
+                        <small>Download</small>
+                      </div>
+                    </div>
+                  )}
+                />
+                <div
+                  className="down-btn blue"
+                  onClick={() => setshowTemplates(true)}
+                >
+                  <div className="down-btn-color">
+                    <h1 className="m-0">
+                      <IoDocuments />
+                    </h1>
+                    <small>Templates</small>
+                  </div>
+                </div>
+                {showTemp ? (
+                  <div ref={hideRef} className="temp-tab">
+                    <div
+                      className="closeTabs"
+                      onClick={() => setshowTemplates(false)}
+                    >
+                      <IoCloseCircleOutline />
+                    </div>
+                    <div className="temp-tab-wrapper">
+                      <div className="temp-wrap">
+                        <div className="temp" onClick={showClassic}>
+                          <h4 className="m-0" >
+                            Classic
+                          </h4>
+                        </div>
+                        <div className="temp" onClick={showStandard}>
+                          <h4 className="m-0">Standard</h4>
+                        </div>
+                        <div className="temp" onClick={showProfessional}>
                           <h4 className="m-0">Professional</h4>
                         </div>
                       </div>
