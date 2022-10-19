@@ -49,7 +49,8 @@ export default function Instructions() {
             </span>
             <p className="mt-20">
               If resume's pdf is showing any margin while downloading, then
-              change the setting margins in the download prompt - 'default' to 'none' then click download on the prompt.
+              change the setting margins in the download prompt - 'default' to
+              'none' then click download on the prompt.
             </p>
           </li>
         </ul>
