@@ -7,15 +7,13 @@ import Footer from "./components/footer";
 import { IoCloudDownloadSharp } from "react-icons/io5";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoDocuments } from "react-icons/io5";
-import Nav  from "./components/nav";
+import Nav from "./components/nav";
 import StandardResume from "./components/standardResume";
 import Info from "./components/info";
 import Faqs from "./components/faqs";
 import ProfessionalResume from "./components/professionalResume";
 
-
-
-export const Home= (close)=> {
+export const Home = (close) => {
   let [tempClassic, settempClassic] = useState(true);
   let [tempStandard, settempStandard] = useState(false);
   let [tempProfessional, setTempProfessional] = useState(false);
@@ -23,11 +21,11 @@ export const Home= (close)=> {
   let [showTemp, setshowTemplates] = useState(false);
   let [hideBadge, sethideBadge] = useState(true);
 
-  useEffect(()=> {
+  useEffect(() => {
     setTimeout(() => {
       sethideBadge(false);
     }, 10000);
-  })
+  });
 
   const componentRef = useRef();
   const standardRef = useRef();
@@ -72,7 +70,7 @@ export const Home= (close)=> {
         <div className="main-body">
           {tempClassic && (
             <div className="mt-20">
-              <h2 className="white">Classic Resume</h2>
+              <h2 className="whiteNew">Classic Resume</h2>
               <Resume ref={componentRef} />
               <div className="btn-grp">
                 <ReactToPrint
@@ -239,7 +237,7 @@ export const Home= (close)=> {
             </div>
           </div>
 
-{/* Professional template */}
+          {/* Professional template */}
           {tempProfessional ? (
             <div className="mt-20">
               <h2 className="white">Professional Resume</h2>
@@ -283,9 +281,7 @@ export const Home= (close)=> {
                     <div className="temp-tab-wrapper">
                       <div className="temp-wrap">
                         <div className="temp" onClick={showClassic}>
-                          <h4 className="m-0" >
-                            Classic
-                          </h4>
+                          <h4 className="m-0">Classic</h4>
                         </div>
                         <div className="temp" onClick={showStandard}>
                           <h4 className="m-0">Standard</h4>
@@ -359,6 +355,5 @@ export const Home= (close)=> {
       </main>
     </div>
   );
-          
-}
+};
 export default Home;
